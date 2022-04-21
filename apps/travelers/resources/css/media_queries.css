@@ -24,9 +24,12 @@
     nav *:not(.menu,.logo) {
         display: none;
     }
-    main .description .button {
+    body main .description .button {
         animation: buttonApparitionPhone .5s .4s forwards !important;
         width: 100% !important;
+        box-shadow: none;
+        height: 50px;
+        width: 50px;
     }
     main .description .button span {
         display: none;
