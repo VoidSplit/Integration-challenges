@@ -1,0 +1,326 @@
+/*
+*  Import all files 
+*/
+
+@import url(fonts.css);
+@import url(variables.css);
+@import url(reset.css);
+@import url(media_queries.css);
+@import url(keyframes.css);
+
+/*
+*  Your CSS
+*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+header {
+    height: 100px;
+}
+
+
+/* Navbar */
+nav {
+    display: flex;
+    padding: 40px 60px;
+    justify-content: space-between;
+    
+    transform: translateY(-100%);
+    animation: navApparition .5s 2.5s forwards;
+}
+nav .links {
+    display: flex;
+    gap: 40px;
+}
+nav .links a {
+    position: relative;
+}
+nav .links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: var(--black);
+    transition: transform .2s;
+    transform-origin: left;
+}
+nav .links a:hover::after {
+    transform: scaleX(1);
+}
+nav .destination {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+nav .destination::after {
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.02);
+    content: '';
+    height: calc(100% + 25px);
+    width: calc(100% + 50px);
+    border-radius: 25px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .2s;
+}
+nav .destination:hover::after {
+    opacity: 1;
+}
+nav .destination input {
+    border: none;
+    background-color: transparent;
+}
+nav .destination input:focus {
+    outline: none;
+}
+nav .destination input::placeholder {
+    color: var(--black)
+}
+nav .destination label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav *:not(.logo) {
+    font-size: .9rem;
+    text-decoration: none;
+}
+nav > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+}
+nav .logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+}
+nav .menu .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    transition: padding .1s;
+}
+nav .menu .icon span {
+    display: flex;
+    height: 2px;
+    width: 25px;
+    background-color: var(--black);
+}
+nav .menu .icon span:nth-child(1) {
+    margin: 0 auto 0 0
+}
+nav .menu .icon span:nth-child(2) {
+    margin: 0 0 0 auto
+}
+
+nav .menu:hover .icon {
+    padding: 0 5px;
+}
+
+
+/* Main */
+main {
+    display: grid;
+    grid-template-areas: 
+    "a a a a a a"
+    "b b b b b b"
+    "c c c d d d";
+    grid-template-rows: 50px 1fr 2fr;
+    grid-template-columns: repeat(6, 1fr);
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+main .header {
+    grid-area: a;
+    display: flex;
+}
+main .header .counter {
+    padding: 0 60px;
+    display: flex;
+    font-weight: bolder;
+    font-size: 5rem;
+    font-family: 'Open Sans', sans-serif;
+}
+main .header .counter span {
+    opacity: 0;
+    animation: fadeIn .5s 1.5s forwards;
+}
+main .header .counter span:nth-child(2) {
+    position: relative;
+    z-index: 2;
+}
+main .header .navigation {
+    margin-left: 70px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+}
+main .header .navigation span {
+    background-color: var(--black);
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn .5s 2s forwards;
+}
+main .destination-title {
+    z-index: 1;
+    grid-area: b;
+    display: flex;
+    align-items: center;
+    font-size: 8rem;
+    background-color: #fff;
+    padding-left: 38vw;
+    opacity: 0;
+    animation: fadeInRight 1s .5s forwards;
+}
+main .destination-title p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    letter-spacing: 1rem;
+}
+main .image-wrapper {
+    grid-area: c;
+}
+main .image-wrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    animation: imageApparition .5s forwards;
+}
+main .description {
+    position: relative;
+    grid-area: d;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 300px 0 50px;
+    gap: 100px;
+}
+main .description .title {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn .5s 1.5s forwards;
+}
+main .description .title .black {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+main .description .title .black p {
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .05rem;
+    color: var(--black);
+}
+main .description .title .black .icon {
+    color: var(--black);
+}
+main .description .title .gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+main .description .title .gray p {
+    color: rgb(174, 174, 174);
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .05rem;
+}
+main .description .title .gray span {
+    background-color: rgb(174, 174, 174);
+    height: 1px;
+    width: 40px;
+}
+main .description .inner  p {
+    color: rgb(174, 174, 174);
+    line-height: 1.5rem;
+    font-size: .9rem;
+    opacity: 0;
+    animation: fadeIn .5s 2s forwards;
+}
+
+main .description .button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    animation: buttonApparition .5s .4s forwards;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 80px;
+    gap: 35px;
+    cursor: pointer;
+}
+main .description .button p {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+main .description .button span {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 1px;
+    width: 40px;
+}
+main .description .socials {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding: 15px;
+    height: 160px;
+    width: 80px;
+    transform: translateX(-40%);
+}
+main .description .socials span {
+    background-color: var(--black); 
+    height: 0;
+    width: 1px;
+    animation: socialApparition-span .5s 3s forwards;
+}
+main .description .socials a {
+    opacity: 0;
+    animation: socialApparition-icon .5s forwards;
+}
+main .description .socials a:nth-child(4) {
+    animation-delay: 3.9s;
+}
+main .description .socials a:nth-child(3) {
+    animation-delay: 3.7s;
+}
+main .description .socials a:nth-child(2) {
+    animation-delay: 3.5s;
+}
+.invisible {
+    display: none;
+}
+
+
