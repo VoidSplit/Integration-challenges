@@ -26,6 +26,10 @@
     }
     main .description .button {
         animation: buttonApparitionPhone .5s .4s forwards !important;
+        width: 100% !important;
+    }
+    main .description .button span {
+        display: none;
     }
     main .socials {
         left: 0;
@@ -49,7 +53,7 @@
 @media screen and (max-width: 480px) {
     body main .description {
         padding: 15px 25px;
-        gap: 25px;
+        gap: 15px;
     }
     body main .description .title {
         flex-direction: column;
