@@ -137,7 +137,7 @@ nav .menu:hover .icon {
 
 
 /* Main */
-main {
+#landing {
     display: grid;
     grid-template-areas: 
     "a a a a a a"
@@ -148,26 +148,26 @@ main {
     height: calc(100vh - 100px);
     width: 100%;
 }
-main .header {
+#landing .header {
     grid-area: a;
     display: flex;
 }
-main .header .counter {
+#landing .header .counter {
     padding: 0 60px;
     display: flex;
     font-weight: bolder;
     font-size: 5rem;
     font-family: 'Open Sans', sans-serif;
 }
-main .header .counter span {
+#landing .header .counter span {
     opacity: 0;
     animation: fadeIn .5s 1.5s forwards;
 }
-main .header .counter span:nth-child(2) {
+#landing .header .counter span:nth-child(2) {
     position: relative;
     z-index: 2;
 }
-main .header .navigation {
+#landing .header .navigation {
     margin-left: 70px;
     display: flex;
     gap: 25px;
@@ -175,14 +175,14 @@ main .header .navigation {
     justify-content: center;
     font-size: .7rem;
 }
-main .header .navigation span {
+#landing .header .navigation span {
     background-color: var(--black);
     color: #fff;
     cursor: pointer;
     opacity: 0;
     animation: fadeIn .5s 2s forwards;
 }
-main .destination-title {
+#landing .destination-title {
     z-index: 1;
     grid-area: b;
     display: flex;
@@ -193,23 +193,23 @@ main .destination-title {
     opacity: 0;
     animation: fadeInRight 1s .5s forwards;
 }
-main .destination-title p {
+#landing .destination-title p {
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     letter-spacing: 1rem;
     transform: translateX(100px);
 }
-main .image-wrapper {
+#landing .image-wrapper {
     grid-area: c;
 }
-main .image-wrapper img {
+#landing .image-wrapper img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     transform: translateY(100%);
     animation: imageApparition .5s forwards;
 }
-main .description {
+#landing .description {
     position: relative;
     grid-area: d;
     display: flex;
@@ -218,45 +218,45 @@ main .description {
     max-width: 500px;
     gap: 100px;
 }
-main .description .title {
+#landing .description .title {
     display: flex;
     gap: 20px;
     opacity: 0;
     animation: fadeIn .5s 1.5s forwards;
 }
-main .description .title .black {
+#landing .description .title .black {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-main .description .title .black p {
+#landing .description .title .black p {
     font-weight: 600;
     font-size: .8rem;
     letter-spacing: .05rem;
     color: var(--black);
 }
-main .description .title .black .icon {
+#landing .description .title .black .icon {
     color: var(--black);
 }
-main .description .title .gray {
+#landing .description .title .gray {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-main .description .title .gray p {
+#landing .description .title .gray p {
     color: rgb(174, 174, 174);
     font-weight: 600;
     font-size: .8rem;
     letter-spacing: .05rem;
 }
-main .description .title .gray span {
+#landing .description .title .gray span {
     background-color: rgb(174, 174, 174);
     height: 1px;
     width: 40px;
 }
-main .description .inner  p {
+#landing .description .inner  p {
     color: rgb(174, 174, 174);
     line-height: 1.5rem;
     font-size: .9rem;
@@ -264,7 +264,7 @@ main .description .inner  p {
     animation: fadeIn .5s 2s forwards;
 }
 
-main .description .button {
+#landing .description .button {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -280,12 +280,12 @@ main .description .button {
     gap: 35px;
     cursor: pointer;
 }
-main .description .button p {
+#landing .description .button p {
     color: #fff;
     text-transform: uppercase;
     font-size: .8rem;
 }
-main .description .button span {
+#landing .description .button span {
     background-color: rgba(255, 255, 255, 0.5);
     height: 1px;
     width: 40px;
@@ -327,3 +327,179 @@ main .description .button span {
 }
 
 
+#details {
+    padding: 0 100px;
+    z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 100px;
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-areas: 
+    "a b b"
+    "c c c";
+    grid-template-rows: auto 100px;
+    grid-template-columns: 40% 60%;
+    background-color: #fff;
+    transition: transform .5s;
+    opacity: 0;
+    animation: fadeIn .5s 1s forwards;
+}
+#details.closed {
+    transform: translateX(100%);
+}
+#details .image {
+    overflow: hidden;
+    height: 100%;
+    grid-area: a;
+}
+#details .image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+#details .infos {
+    padding: 0 50px;
+    grid-area: b;
+    display: grid;
+    grid-template-areas: 
+    "a a a a close"
+    ". . . . ."
+    "b b b b m"
+    "c c c c m"
+    "d d d d ."
+    "e e e e i";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 10% 30% 20% 15% 15%;
+}
+#details .infos .top {
+    grid-area: a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#details .infos .top p {
+    font-size: .8rem;
+    font-weight: 800;
+}
+#details .infos .top .icon i {
+    color: rgb(174, 174, 174);
+}
+#details .infos .top .cross {
+    margin: 0 0 0 auto
+}
+#details .infos #close {
+    grid-area: close;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#details .infos #close i {
+    cursor: pointer;
+}
+#details .infos .title-wrapper {
+    grid-area: b;
+}
+#details .infos .title-wrapper h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size: 7vw;
+    
+}
+#details .infos .title-wrapper span {
+    color: rgb(174, 174, 174);
+    position: relative;
+    top: -25px;
+    left: 8px;
+}
+#details .infos .description {
+    grid-area: c;
+    color: rgb(174, 174, 174);
+}
+#details .infos .stats {
+    grid-area: d;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+#details .infos .stats div {
+    display: flex;
+    font-size: .8rem;
+    gap: 5px;
+}
+#details .infos .stats div p {
+    color: rgb(174, 174, 174);
+}
+#details .infos .stats div span {
+    font-weight: bold;
+}
+#details .infos .buttons {
+    grid-area: e;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+#details .infos .buttons .button {
+    position: relative;
+    background-color: #3d43a1;
+    padding: 0 25px;
+    border-radius: 5px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+#details .infos .buttons .button .decoration {
+    position: absolute;
+    right: 50px;
+    height: 1px;
+    width: 35px;
+    background-color: #fff;
+}
+#details .infos .buttons .button:nth-child(2) {
+    background-color: #ee5d3e;
+}
+#details .infos .buttons .button span {
+    display: block;
+    color: #fff;
+}
+#details .infos .indicator {
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#details .infos .indicator span {
+    background-color: rgb(174, 174, 174);
+    width: 2px;
+    height: 50px;
+}
+#details .infos .indicator div {
+    font-weight: bold;
+    transform: rotateZ(-90deg);
+}
+#details .infos .navigation {
+    grid-area: i;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+#details .social-line {
+    grid-area: c;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+#details .social-line a {
+    color: var(--black);
+    text-decoration: none;
+}

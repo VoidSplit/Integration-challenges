@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#app {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    gap: 15px;
+}
+.card {
+    height: 80px;
+    width: 250px;
+    background-color: #eee;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

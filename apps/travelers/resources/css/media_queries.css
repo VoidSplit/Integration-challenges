@@ -10,10 +10,10 @@
 
 /* Small screens, laptops */
 @media screen and (max-width: 1024px) {
-    main .destination-title {
+    #landing .destination-title {
         justify-content: center;
     }
-    main .destination-title p {
+    #landing .destination-title p {
         transform: translateX(0) !important;
         font-size: 10vw;
     }
@@ -24,22 +24,22 @@
     nav *:not(.menu,.logo) {
         display: none;
     }
-    body main .description .button {
+    body #landing .description .button {
         animation: buttonApparitionPhone .5s .4s forwards !important;
         width: 100% !important;
         box-shadow: none;
         height: 50px;
         width: 50px;
     }
-    main .description .button span {
+    #landing .description .button span {
         display: none;
     }
-    main .socials {
+    #landing .socials {
         left: 0;
         bottom: 0;
         transform: translateX(40%);
     }
-    main .socials::after {
+    #landing .socials::after {
         z-index: -1;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.8);
@@ -54,22 +54,22 @@
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
-    body main .description {
+    body #landing .description {
         padding: 15px 25px;
         gap: 15px;
     }
-    body main .description .title {
+    body #landing .description .title {
         flex-direction: column;
         gap: 5px;
     }
-    body main .description .title .black .icon {
+    body #landing .description .title .black .icon {
         display: none;
     }
-    body main .description .title .gray {
+    body #landing .description .title .gray {
         flex-direction: column;
         gap: 5px;
     }
-    body main .description .inner {
+    body #landing .description .inner {
         margin: 0 0 auto 0
     }
 }
