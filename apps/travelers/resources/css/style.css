@@ -142,7 +142,7 @@ main {
     "a a a a a a"
     "b b b b b b"
     "c c c d d d";
-    grid-template-rows: 50px 1fr 2fr;
+    grid-template-rows: 50px calc((100% / 3) - 25px) calc(2 * ((100% / 3)) - 25px);
     grid-template-columns: repeat(6, 1fr);
     height: calc(100vh - 100px);
     width: 100%;
@@ -188,7 +188,7 @@ main .destination-title {
     align-items: center;
     font-size: 8rem;
     background-color: #fff;
-    padding-left: 38vw;
+    justify-content: center;
     opacity: 0;
     animation: fadeInRight 1s .5s forwards;
 }
@@ -196,6 +196,7 @@ main .destination-title p {
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     letter-spacing: 1rem;
+    transform: translateX(100px);
 }
 main .image-wrapper {
     grid-area: c;
@@ -212,7 +213,8 @@ main .description {
     grid-area: d;
     display: flex;
     flex-direction: column;
-    padding: 25px 300px 0 50px;
+    padding: 25px 50px;
+    max-width: 500px;
     gap: 100px;
 }
 main .description .title {
@@ -287,7 +289,7 @@ main .description .button span {
     height: 1px;
     width: 40px;
 }
-main .description .socials {
+.socials {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -300,23 +302,23 @@ main .description .socials {
     width: 80px;
     transform: translateX(-40%);
 }
-main .description .socials span {
+.socials span {
     background-color: var(--black); 
     height: 0;
     width: 1px;
     animation: socialApparition-span .5s 3s forwards;
 }
-main .description .socials a {
+.socials a {
     opacity: 0;
     animation: socialApparition-icon .5s forwards;
 }
-main .description .socials a:nth-child(4) {
+.socials a:nth-child(4) {
     animation-delay: 3.9s;
 }
-main .description .socials a:nth-child(3) {
+.socials a:nth-child(3) {
     animation-delay: 3.7s;
 }
-main .description .socials a:nth-child(2) {
+.socials a:nth-child(2) {
     animation-delay: 3.5s;
 }
 .invisible {

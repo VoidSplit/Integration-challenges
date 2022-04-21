@@ -1,1 +1,54 @@
 /* Your media queries here */
+
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {
+}
+
+/* Desktops, large screens */
+@media screen and (max-width: 1200px) {
+}
+
+/* Small screens, laptops */
+@media screen and (max-width: 1024px) {
+    main .destination-title {
+        justify-content: center;
+    }
+    main .destination-title p {
+        transform: translateX(0) !important;
+        font-size: 10vw;
+    }
+}
+
+/* iPads, Tablets */
+@media screen and (max-width: 768px) {
+    nav *:not(.menu,.logo) {
+        display: none;
+    }
+    main .description .button {
+        animation: buttonApparitionPhone .5s .4s forwards !important;
+    }
+    main .socials {
+        left: 0;
+        bottom: 0;
+        transform: translateX(40%);
+    }
+    main .socials::after {
+        z-index: -1;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.8);
+        height: 100%;
+        width: 100%;
+        content: '';
+        bottom: 0;
+        opacity: 0;
+        animation: fadeIn 1s 2.5s forwards;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    main .destination-title {
+        background-color: red !important;
+
+    }
+}
