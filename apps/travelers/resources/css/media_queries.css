@@ -47,8 +47,22 @@
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
-    main .destination-title {
-        background-color: red !important;
-
+    body main .description {
+        padding: 15px 25px;
+        gap: 25px;
+    }
+    body main .description .title {
+        flex-direction: column;
+        gap: 5px;
+    }
+    body main .description .title .black .icon {
+        display: none;
+    }
+    body main .description .title .gray {
+        flex-direction: column;
+        gap: 5px;
+    }
+    body main .description .inner {
+        margin: 0 0 auto 0
     }
 }
