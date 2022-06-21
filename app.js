@@ -3,6 +3,12 @@ const data = [
         link: "apps/travelers/index.html",
         original: "https://www.instagram.com/p/Blulx22h9VD/",
         name:"Travelers."
+    },
+    
+    {
+        link: "apps/montblanc/index.html",
+        original: "https://youtu.be/9dZmMPcaNIs",
+        name:"Montblanc."
     }
 ]
 let app = document.getElementById('app')
